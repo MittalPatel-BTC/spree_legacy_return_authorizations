@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'spree', github: 'spree/spree', branch: '2-4-stable'
+gem 'spree', path: '/home/botree/Mittal/Projects/Actual_Spree_3_7/spree'
 # Provides basic authentication functionality for testing parts of your engine
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-4-stable'
+gem 'spree_auth_devise', '~> 3.5'
 
 gemspec
 
