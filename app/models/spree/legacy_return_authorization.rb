@@ -9,7 +9,7 @@ module Spree
 
     validates :order, presence: true
     validates :amount, numericality: true
-    validate :must_have_shipped_units
+    # validate :must_have_shipped_units
 
     state_machine initial: :authorized do
       after_transition to: :received, do: :process_return
@@ -70,7 +70,7 @@ module Spree
     private
 
       def must_have_shipped_units
-        errors.add(:order, Spree.t(:has_no_shipped_units)) if order.nil? || !order.shipped_shipments.any?
+        # errors.add(:order, Spree.t(:has_no_shipped_units)) if order.nil? || !order.shipped_shipments.any?
       end
 
       def generate_number

@@ -1,14 +1,14 @@
 <% content_for :page_actions do %>
-  <li>
-    <% if @legacy_return_authorization.can_receive? %>
+  <% if @legacy_return_authorization.can_receive? %>
+    <li>
       <%= button_link_to Spree.t(:receive), fire_admin_order_legacy_return_authorization_url(@order, @legacy_return_authorization, :e => 'receive'), :method => :put, :data => { :confirm => Spree.t(:are_you_sure) }, :icon => 'download-alt' %>
-    <% end %>
-  </li>
-  <li>
-    <% if @legacy_return_authorization.can_cancel? %>
+    </li>
+  <% end %>
+  <% if @legacy_return_authorization.can_cancel? %>
+    <li>
       <%= button_link_to Spree.t('actions.cancel'), fire_admin_order_legacy_return_authorization_url(@order, @legacy_return_authorization, :e => 'cancel'), :method => :put, :data => { :confirm => Spree.t(:are_you_sure) }, :icon => 'remove' %>
-    <% end %>
-  </li>
+    </li>
+  <% end %>
 <% end %>
 
 <%= render :partial => 'spree/admin/shared/order_tabs', :locals => { :current => 'Legacy Return Authorizations' } %>
